@@ -1,6 +1,32 @@
-@mixin flex($direction: row, $justify-content: center, $align-items: center) {
+@mixin flex(
+  $direction: row,
+  $justify-content: center,
+  $align-items: center,
+  $wrap: nowrap
+) {
   display: flex;
   justify-content: $justify-content;
   align-items: $align-items;
   flex-direction: $direction;
+  flex-wrap: $wrap;
+}
+
+// Desktop first
+// md --> < 768px
+// sm ---> < 560px
+
+@mixin respond($screensize) {
+  // se $screensize è md
+  // Allora applica la media query di 768px
+  // altrimenti se $screensize è sm
+  // Allora applica la mq di 560px
+  @if $screensize == "md" {
+    @media screen and (max-width: 768px) {
+      @content;
+    }
+  } @else if $screensize == "sm" {
+    @media screen and (max-width: 560px) {
+      @content;
+    }
+  }
 }

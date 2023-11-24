@@ -46,6 +46,16 @@ export default {
 
 header {
   padding: 1rem;
+
+
+  @include respond('md') {
+    background-color: lightgreen;
+  }
+
+  @include respond('sm') {
+    background-color: lightpink;
+  }
+
   .logo {
     text-align: center;
 

@@ -9,6 +9,10 @@ export default {
     ProductList,
     AppFooter
   },
+
+  data() {
+    return {}
+  }
 };
 </script>
 
