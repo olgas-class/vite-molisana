@@ -19,7 +19,7 @@ export default {
           title: "Contatti",
           isActive: false,
         },
-      ],
+      ]
     };
   },
 };
