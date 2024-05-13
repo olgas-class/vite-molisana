@@ -5,21 +5,21 @@ export default {
       menu: [
         {
           title: "Home",
-          isActive: false,
+          routeName: "home",
         },
         {
           title: "Prodotti",
-          isActive: true,
+          routeName: "products",
         },
         {
           title: "Chi siamo",
-          isActive: false,
+          routeName: "about",
         },
         {
           title: "Contatti",
-          isActive: false,
+          routeName: "contacts",
         },
-      ]
+      ],
     };
   },
 };
@@ -35,7 +35,10 @@ export default {
     </div>
     <ul class="navigation">
       <li v-for="item in menu">
-        <a href="" :class="{ active: item.isActive }">{{ item.title }}</a>
+        <!-- <a href="" :class="{ active: item.isActive }">{{ item.title }}</a> -->
+        <router-link :to="{ name: item.routeName }" class="nav-link">{{
+          item.title
+        }}</router-link>
       </li>
     </ul>
   </header>
@@ -48,6 +51,10 @@ export default {
 header {
   .header-logo {
     text-align: center;
+  }
+
+  .router-link-active {
+    color: green;
   }
 
   ul {

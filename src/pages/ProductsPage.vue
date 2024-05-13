@@ -1,6 +1,6 @@
 <script>
 import { productsArray, title } from "../assets/data/products.js";
-import ProductCard from "./ProductCard.vue";
+import ProductCard from "../components/ProductCard.vue";
 
 export default {
   components: {
